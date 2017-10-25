@@ -110,7 +110,7 @@ typedef void(^A0UserAPIClientError)(NSError* __nonnull error);
 - (void)registerPublicKey:(NSData *)pubKey
                    device:(NSString *)deviceName
                      user:(NSString *)userId
-                  success:(void(^)())success
+                  success:(void(^)(void))success
                   failure:(A0UserAPIClientError)failure DEPRECATED_ATTRIBUTE;
 
 /**
@@ -123,7 +123,7 @@ typedef void(^A0UserAPIClientError)(NSError* __nonnull error);
  */
 - (void)removePublicKeyOfDevice:(NSString *)deviceName
                            user:(NSString *)userId
-                        success:(void(^)())success
+                        success:(void(^)(void))success
                         failure:(A0UserAPIClientError)failure DEPRECATED_ATTRIBUTE;
 
 @end

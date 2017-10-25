@@ -58,7 +58,7 @@
 /**
  Block that is called on when the user dismisses the Login screen. Only when closable property is `YES`.
  */
-@property (copy, nonatomic) void(^onUserDismissBlock)();
+@property (copy, nonatomic) void(^onUserDismissBlock)(void);
 
 /**
  *  Parameters to be sent to all Authentication request to Auth0 API.
@@ -76,6 +76,6 @@
  *  For more info: https://api.auth0.com/docs/api/v2
  *  @deprecated 1.14.0. Lock now use `/passwordless/start` endpoint instead of API v2.
  */
-@property (copy, nonatomic) NSString *(^auth0APIToken)() DEPRECATED_MSG_ATTRIBUTE("a API v2 JWT is no longer necessary");
+@property (copy, nonatomic) NSString *(^auth0APIToken)(void) DEPRECATED_MSG_ATTRIBUTE("a API v2 JWT is no longer necessary");
 
 @end

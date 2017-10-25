@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface A0ModalPresenter : NSObject
 
-- (void)presentController:(UIViewController *)controller completion:(void(^ _Nullable)())completion;
+- (void)presentController:(UIViewController *)controller completion:(void(^ _Nullable)(void))completion;
 
 @end
 

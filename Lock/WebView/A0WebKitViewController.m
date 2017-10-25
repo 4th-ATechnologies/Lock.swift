@@ -266,7 +266,7 @@
     self.onFailure = nil;
 }
 
-- (void)dismissWithCompletion:(void(^)())completion {
+- (void)dismissWithCompletion:(void(^)(void))completion {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
         completion();
         [self cleanCallbacks];

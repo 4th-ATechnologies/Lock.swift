@@ -29,7 +29,7 @@
 @interface A0SignUpViewController : UIViewController<A0AuthenticationUIComponent>
 
 @property (copy, nonatomic) void(^onSignUpBlock)(A0UserProfile *profile, A0Token *token);
-@property (copy, nonatomic) void(^onMFARequired)();
+@property (copy, nonatomic) void(^onMFARequired)(void);
 
 @property (copy, nonatomic) A0AuthParameters *parameters;
 @property (assign, nonatomic) BOOL forceUsername;

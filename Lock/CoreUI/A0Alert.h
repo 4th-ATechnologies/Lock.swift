@@ -23,7 +23,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^A0AlertButtonCallback)();
+typedef void(^A0AlertButtonCallback)(void);
 
 @interface A0Alert : NSObject
 

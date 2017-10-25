@@ -143,7 +143,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
 - (void)registerPublicKey:(NSData *)pubKey
                    device:(NSString *)deviceName
                      user:(NSString *)userId
-                  success:(void (^)())success
+                  success:(void (^)(void))success
                   failure:(A0UserAPIClientError)failure {
     NSDictionary *parameters = @{
                                  @"public_key": [[NSString alloc] initWithData:pubKey encoding:NSUTF8StringEncoding],
@@ -160,7 +160,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
 
 - (void)removePublicKeyOfDevice:(NSString *)deviceName
                            user:(NSString *)userId
-                        success:(void (^)())success
+                        success:(void (^)(void))success
                         failure:(A0UserAPIClientError)failure {
     NSDictionary *parameters = @{
                                  A0ParameterDevice: deviceName,

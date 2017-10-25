@@ -173,7 +173,7 @@
 - (void)navigateToInputCodeScreen {
     __weak A0SMSLockViewController *weakSelf = self;
     A0SMSCodeViewController *controller = [[A0SMSCodeViewController alloc] initWithViewModel:self.model];
-    void(^showRegister)() = ^{
+    void(^showRegister)(void) = ^{
         [weakSelf nagivateToSendCodeScreen];
     };
     [self.navigationView removeAll];

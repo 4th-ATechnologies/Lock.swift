@@ -27,7 +27,7 @@
 
 @interface A0EmailSendCodeViewController : UIViewController<A0KeyboardEnabledView>
 
-@property (copy, nonatomic) void(^didRequestVerificationCode)();
+@property (copy, nonatomic) void(^didRequestVerificationCode)(void);
 
 - (instancetype)initWithViewModel:(A0PasswordlessLockViewModel *)viewModel;
 

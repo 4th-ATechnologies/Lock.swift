@@ -417,7 +417,7 @@
     return controller;
 }
 
-- (void(^)())signUpActionBlockWithSuccess:(void(^)(A0UserProfile *, A0Token *))success controller:(A0DatabaseLoginViewController *)previousController {
+- (void(^)(void))signUpActionBlockWithSuccess:(void(^)(A0UserProfile *, A0Token *))success controller:(A0DatabaseLoginViewController *)previousController {
     __weak A0LockViewController *weakSelf = self;
     __weak A0DatabaseLoginViewController *weakPreviousController = previousController;
     if (self.navigationController && self.customSignUp) {
@@ -471,7 +471,7 @@
     controller.email = identifier;
     __weak A0LockViewController *weakSelf = self;
     __weak A0ChangePasswordViewController *weakController = controller;
-    void(^block)() = ^{
+    void(^block)(void) = ^{
         weakSelf.identifier = weakController.email;
         [weakSelf layoutRootController];
     };

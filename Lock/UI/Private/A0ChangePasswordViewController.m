@@ -103,7 +103,7 @@
     if (!error) {
         [self hideKeyboard];
         NSString *username = self.changePasswordView.identifier;
-        void(^success)() = ^ {
+        void(^success)(void) = ^ {
             [self postChangePasswordSuccessfulWithEmail:username];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [A0Alert showInController:self errorAlert:^(A0Alert *alert) {

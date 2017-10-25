@@ -101,6 +101,7 @@ static const CGFloat ServiceButtonTitlePaddingLeft = 10.0f;
 }
 
 - (void)prepareForReuse {
+    [super prepareForReuse];
     [self.button removeTarget:nil action:NULL forControlEvents:UIControlEventTouchUpInside];
 }
 

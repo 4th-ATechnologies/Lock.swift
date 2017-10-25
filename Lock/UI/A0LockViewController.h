@@ -65,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Block that is called on when the user dismisses the Login screen. Only when closable property is YES.
  */
-@property (copy, nullable, nonatomic) void(^onUserDismissBlock)();
+@property (copy, nullable, nonatomic) void(^onUserDismissBlock)(void);
 
 ///------------------------------------------------
 /// @name UI customization

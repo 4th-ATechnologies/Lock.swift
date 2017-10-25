@@ -24,7 +24,7 @@
 
 @implementation A0ModalPresenter
 
-- (void)presentController:(UIViewController *)controller completion:(void (^)())completion {
+- (void)presentController:(UIViewController *)controller completion:(void (^)(void))completion {
     [[self presenterViewController] presentViewController:controller animated:YES completion:completion];
 }
 

@@ -28,7 +28,7 @@
 @interface A0TouchIDRegisterViewController : A0ContainerViewController
 
 @property (copy, nonatomic) void(^onRegisterBlock)(A0KeyUploader *uploader, NSString *identifier);
-@property (copy, nonatomic) void(^onCancelBlock)();
+@property (copy, nonatomic) void(^onCancelBlock)(void);
 
 @property (copy, nonatomic) A0AuthParameters *parameters;
 @property (strong, nonatomic) A0Lock *lock;

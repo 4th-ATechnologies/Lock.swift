@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT NSString * const A0PhoneNumberValidatorIdentifer;
 
-typedef NSString * _Nullable (^A0PhoneNumberValidatorSourceBlock)();
+typedef NSString * _Nullable (^A0PhoneNumberValidatorSourceBlock)(void);
 
 @interface A0PhoneNumberValidator : NSObject<A0FieldValidator>
 

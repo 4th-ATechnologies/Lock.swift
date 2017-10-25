@@ -213,7 +213,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSURLSessionDataTask *)requestChangePasswordForUsername:(NSString *)username
                                                 parameters:(nullable A0AuthParameters *)parameters
-                                                   success:(void(^)())success
+                                                   success:(void(^)(void))success
                                                    failure:(A0APIClientError)failure;
 
 /**
@@ -400,7 +400,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSURLSessionDataTask *)unlinkAccountWithUserId:(NSString *)userId
                                       accessToken:(NSString *)accessToken
-                                          success:(void(^)())success
+                                          success:(void(^)(void))success
                                           failure:(A0APIClientError)failure;
 
 ///----------------------------------------
@@ -417,7 +417,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return an instance of `NSURLSessionDataTask`
  */
 - (NSURLSessionDataTask *)startPasswordlessWithPhoneNumber:(NSString *)phoneNumber
-                                                   success:(void(^)())success
+                                                   success:(void(^)(void))success
                                                    failure:(A0APIClientError)failure;
 
 /**
@@ -430,7 +430,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return an instance of `NSURLSessionDataTask`
  */
 - (NSURLSessionDataTask *)startPasswordlessWithEmail:(NSString *)email
-                                             success:(void(^)())success
+                                             success:(void(^)(void))success
                                              failure:(A0APIClientError)failure;
 
 /**
@@ -446,7 +446,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSURLSessionDataTask *)startPasswordlessWithMagicLinkInEmail:(NSString *)email
                                                      parameters:(A0AuthParameters *)parameters
-                                                        success:(void(^)())success
+                                                        success:(void(^)(void))success
                                                         failure:(A0APIClientError)failure;
 
 /**
@@ -462,7 +462,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSURLSessionDataTask *)startPasswordlessWithMagicLinkInSMS:(NSString *)phoneNumber
                                                    parameters:(A0AuthParameters *)parameters
-                                                      success:(void(^)())success
+                                                      success:(void(^)(void))success
                                                       failure:(A0APIClientError)failure;
 @end
 
@@ -546,7 +546,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSURLSessionDataTask *)changePassword:(NSString *)newPassword
                              forUsername:(NSString *)username
                               parameters:(nullable A0AuthParameters *)parameters
-                                 success:(void(^)())success
+                                 success:(void(^)(void))success
                                  failure:(A0APIClientError)failure DEPRECATED_ATTRIBUTE;
 
 @end

@@ -28,7 +28,7 @@
 
 @interface A0ChangePasswordViewController : UIViewController<A0AuthenticationUIComponent>
 
-@property (copy, nonatomic) void(^onChangePasswordBlock)();
+@property (copy, nonatomic) void(^onChangePasswordBlock)(void);
 @property (copy, nonatomic) A0AuthParameters *parameters;
 @property (assign, nonatomic) BOOL forceUsername;
 @property (strong, nonatomic) id<A0FieldValidator> validator;

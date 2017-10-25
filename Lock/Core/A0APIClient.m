@@ -243,7 +243,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
 
 - (NSURLSessionDataTask *)requestChangePasswordForUsername:(NSString *)username
                                                 parameters:(A0AuthParameters *)parameters
-                                                   success:(void (^)())success failure:(A0APIClientError)failure {
+																	success:(void (^)(void))success failure:(A0APIClientError)failure {
     A0AuthParameters *defaultParameters = [A0AuthParameters newWithDictionary:@{
                                                                                 kEmailParamName: username,
                                                                                 kClientIdParamName: self.clientId,
@@ -442,7 +442,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
 
 - (NSURLSessionDataTask *)unlinkAccountWithUserId:(NSString *)userId
                     accessToken:(NSString *)accessToken
-                        success:(void (^)())success
+                        success:(void (^)(void))success
                         failure:(A0APIClientError)failure {
     A0AuthParameters *parameters = [A0AuthParameters newWithDictionary:@{
                                                                          @"clientID": self.clientId,
@@ -476,7 +476,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
 #pragma mark - Passwordless Authentication
 
 - (NSURLSessionDataTask *)startPasswordlessWithPhoneNumber:(NSString *)phoneNumber
-                                                   success:(void(^)())success
+                                                   success:(void(^)(void))success
                                                    failure:(A0APIClientError)failure {
     return [self.manager POST:[self.router startPasswordless]
                    parameters:@{
@@ -493,7 +493,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
                       } failure:[A0APIClient sanitizeFailureBlock:failure]];
 }
 
-- (NSURLSessionDataTask *)startPasswordlessWithEmail:(NSString *)email success:(void (^)())success failure:(A0APIClientError)failure {
+- (NSURLSessionDataTask *)startPasswordlessWithEmail:(NSString *)email success:(void (^)(void))success failure:(A0APIClientError)failure {
     return [self.manager POST:[self.router startPasswordless]
                    parameters:@{
                                 kClientIdParamName: self.clientId,
@@ -512,7 +512,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
 
 - (NSURLSessionDataTask *)startPasswordlessWithMagicLinkInEmail:(NSString *)email
                                                      parameters:(A0AuthParameters *)parameters
-                                                        success:(void(^)())success
+                                                        success:(void(^)(void))success
                                                         failure:(A0APIClientError)failure {
     NSDictionary *params = @{
                              kClientIdParamName: self.clientId,
@@ -539,7 +539,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
 
 - (NSURLSessionDataTask *)startPasswordlessWithMagicLinkInSMS:(NSString *)phoneNumber
                                                      parameters:(A0AuthParameters *)parameters
-                                                        success:(void(^)())success
+                                                        success:(void(^)(void))success
                                                         failure:(A0APIClientError)failure {
     NSDictionary *params = @{
                              kClientIdParamName: self.clientId,
@@ -698,7 +698,7 @@ typedef void (^AFFailureBlock)(NSURLSessionDataTask *, NSError *);
     self.userClient = client;
 }
 
-- (NSURLSessionDataTask *)changePassword:(NSString *)newPassword forUsername:(NSString *)username parameters:(A0AuthParameters *)parameters success:(void(^)())success failure:(A0APIClientError)failure {
+- (NSURLSessionDataTask *)changePassword:(NSString *)newPassword forUsername:(NSString *)username parameters:(A0AuthParameters *)parameters success:(void(^)(void))success failure:(A0APIClientError)failure {
     A0AuthParameters *defaultParameters = [A0AuthParameters newWithDictionary:@{
                                                                                 kEmailParamName: username,
                                                                                 kPasswordParamName: newPassword,

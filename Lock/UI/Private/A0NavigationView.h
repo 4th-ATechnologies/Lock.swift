@@ -22,7 +22,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^A0NavigationViewActionBlock)();
+typedef void(^A0NavigationViewActionBlock)(void);
 
 @interface A0NavigationView : UIView
 

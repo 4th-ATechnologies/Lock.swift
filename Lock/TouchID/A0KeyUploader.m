@@ -54,7 +54,7 @@ NSString * const A0KeyUploaderErrorDomain = @"com.auth0.touchid.uploader";
     NSString *deviceIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     NSString *keyBase64 = [key base64EncodedStringWithOptions:0];
 
-    void(^registerKey)() = ^{
+    void(^registerKey)(void) = ^{
         A0LogDebug(@"Uploading key %@ for user %@", keyBase64, user);
         [self performRequestWithMethod:@"POST"
                                    url:url

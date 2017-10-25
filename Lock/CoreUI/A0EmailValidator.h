@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT NSString * const A0EmailValidatorIdentifer;
 
-typedef NSString * _Nullable (^A0EmailValidatorSourceBlock)();
+typedef NSString * _Nullable (^A0EmailValidatorSourceBlock)(void);
 
 @interface A0EmailValidator : NSObject<A0FieldValidator>
 

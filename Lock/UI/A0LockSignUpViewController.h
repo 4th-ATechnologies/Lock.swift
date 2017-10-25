@@ -53,7 +53,7 @@
 /**
  Block that is called on when the user dismisses the Login screen. Only when closable property is YES.
  */
-@property (copy, nonatomic) void(^onUserDismissBlock)();
+@property (copy, nonatomic) void(^onUserDismissBlock)(void);
 
 /**
  After a successful Signup, `A0AuthenticationViewController` will attempt to login the user if this property is YES otherwise will call onAuthenticationBlock with both parameters nil. Default value is YES
